@@ -6,7 +6,7 @@ const defaultHeaders = {
 };
 
 export const ContactUsInfoAPIMethod = (userInfo, success) => {
-  return fetch(`http://localhost:5000/api/admin/ContactUs`, {
+  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/admin/ContactUs`, {
     ...defaultHeaders,
     method: "POST",
     body: JSON.stringify(userInfo),
@@ -17,7 +17,7 @@ export const ContactUsInfoAPIMethod = (userInfo, success) => {
 
 export const getAllNotificationsAPIMethod = (success) => {
   return axios
-    .get("http://localhost:5000/api/profile/notifications", {
+    .get("https://datafetcherforbinomo.azurewebsites.net/api/profile/notifications", {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -26,7 +26,7 @@ export const getAllNotificationsAPIMethod = (success) => {
 
 export const signUpAPIInfo = (profile, success) => {
   return axios
-    .post(`http://localhost:5000/api/profile/register`, profile, {
+    .post(`https://datafetcherforbinomo.azurewebsites.net/api/profile/register`, profile, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -35,7 +35,7 @@ export const signUpAPIInfo = (profile, success) => {
 
 export const LoginAPIMethod = (profile, success) => {
   return axios
-    .post(`http://localhost:5000/api/profile/login`, profile, {
+    .post(`https://datafetcherforbinomo.azurewebsites.net/api/profile/login`, profile, {
       withCredentials: true,
     })
     .then(checkStatus)
