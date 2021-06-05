@@ -69,7 +69,7 @@ const Live = () => {
       clearInterval(a);
     };
   }, []);
-  const [candleData, setCandleData] = useState([
+  const [candleData] = useState([
     {
       x: new Date(1538778600000),
       y: [6629.81, 6650.5, 6623.04, 6633.33],
@@ -92,7 +92,7 @@ const Live = () => {
     },
   ]);
 
-  const [state, setState] = useState({
+  const [state] = useState({
     series: [
       {
         name: "series-1",

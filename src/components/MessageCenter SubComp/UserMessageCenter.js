@@ -54,11 +54,9 @@ export default function MessageCenter(props) {
     }
   }
   useEffect(() => {
-
     fetchData();
-    props.socket.on('userNotification', fetchData);
-
-  }, []);
+    props.socket.on("userNotification", fetchData);
+  }, [props.socket]);
   const classes = styles();
   return (
     <Container className={classes.contentContainer}>

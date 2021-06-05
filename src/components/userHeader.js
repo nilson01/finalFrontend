@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Typography, Box, makeStyles } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const styles = makeStyles((theme) => ({
 export default function UserHeader(props) {
   const [name] = useState(localStorage.getItem("name").toUpperCase());
   const [accountType] = useState(localStorage.getItem("accountType"));
-  const [profile_url, setProfile_url] = useState(
+  const [profile_url] = useState(
     localStorage.getItem("profile_url")
   );
 
@@ -39,9 +39,7 @@ export default function UserHeader(props) {
       return profile_url
     }
   };
-  useEffect(() => {
-    // setProfile_url(localStorage.getItem("profile_url"));
-  }, []);
+  
 
   const classes = styles();
   return (

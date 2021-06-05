@@ -129,7 +129,7 @@ export default function AdminDashboard(props) {
       }
     }
     fetchData();
-  }, []);
+  }, [props.pass]);
   return (
     <>
       <Container display="flex" className={classes.cardContainer}>

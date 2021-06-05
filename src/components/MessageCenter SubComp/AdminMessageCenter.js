@@ -67,7 +67,7 @@ export default function MessageCenter(props) {
     fetchData();
     props.socket.on('chat', fetchData);
 
-  }, []);
+  }, [props.socket]);
 
 
 

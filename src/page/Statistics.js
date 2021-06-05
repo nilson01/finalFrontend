@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import Sidebar from "../components/SideBar";
 import UserHeader from "../components/userHeader";
-import Masonry from 'react-masonry-css';
-import StatisticsAdmin from '../components/Statistics SubComp/StatisticsAdmin';
-import StatisticsUser from '../components/Statistics SubComp/StatisticsUser';
-import {
-  Grid,
-  Paper,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import Masonry from "react-masonry-css";
+import StatisticsAdmin from "../components/Statistics SubComp/StatisticsAdmin";
+import StatisticsUser from "../components/Statistics SubComp/StatisticsUser";
+import { Grid, Paper, makeStyles, Typography } from "@material-ui/core";
 
 const styles = makeStyles((theme) => ({
   root: {
@@ -32,14 +27,13 @@ const styles = makeStyles((theme) => ({
 }));
 
 export default function ContactUserVAdmin() {
-
-  const [isAdmin, setIsAdmin] = useState(JSON.parse(localStorage.getItem("isAdmin")));
+  const [isAdmin] = useState(JSON.parse(localStorage.getItem("isAdmin")));
   const classes = styles();
 
   const breakpoints = {
     default: 2,
     1100: 2,
-    700: 1
+    700: 1,
   };
 
   return (
@@ -52,10 +46,20 @@ export default function ContactUserVAdmin() {
           <Masonry
             breakpointCols={breakpoints}
             className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column">
-            <div>{isAdmin ? <Typography variant="h4" gutterBottom>ADMIN: </Typography> : <Typography variant="h4" gutterBottom>PROFILE: </Typography>}</div>
+            columnClassName="my-masonry-grid_column"
+          >
+            <div>
+              {isAdmin ? (
+                <Typography variant="h4" gutterBottom>
+                  ADMIN:{" "}
+                </Typography>
+              ) : (
+                <Typography variant="h4" gutterBottom>
+                  PROFILE:{" "}
+                </Typography>
+              )}
+            </div>
             {isAdmin ? <StatisticsAdmin /> : <StatisticsUser />}
-
           </Masonry>
         </Paper>
       </Grid>

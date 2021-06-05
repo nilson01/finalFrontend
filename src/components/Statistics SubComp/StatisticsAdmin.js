@@ -14,14 +14,14 @@ export default function StatisticsAdmin() {
     monthCategories.push(MonthLst[element])
     monthData.push(month[element])
   });
-  const [optionsB, setOptions] = useState({ chart: { id: "basic-bar" }, xaxis: { categories: monthCategories } });
-  const [seriesB, setSeries] = useState([{ name: "User Joining size", data: monthData }]);
+  const [optionsB] = useState({ chart: { id: "basic-bar" }, xaxis: { categories: monthCategories } });
+  const [seriesB] = useState([{ name: "User Joining size", data: monthData }]);
 
 
   //DONUT graph
-  const [optionsD, setOptionsD] = useState({ labels: ['Win', 'Loss', 'Tie'] });
+  const [optionsD] = useState({ labels: ['Win', 'Loss', 'Tie'] });
   let x = localStorage.getItem("seriesD")
-  const [seriesD, setSeriesD] = useState([Number(x[0]), Number(x[2]), Number(x[4])]);
+  const [seriesD] = useState([Number(x[0]), Number(x[2]), Number(x[4])]);
 
 
 
