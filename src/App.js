@@ -23,7 +23,7 @@ import { Switch, Route } from "react-router-dom";
 import CheckOnline from "./components/CheckOnline";
 
 import { io } from "socket.io-client";
-var socket = io.connect('http://localhost:5000');
+var socket = io.connect('https://datafetcherforbinomo.azurewebsites.net');
 
 
 const theme = createMuiTheme({
