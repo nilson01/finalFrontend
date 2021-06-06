@@ -44,7 +44,7 @@ export const LoginAPIMethod = (profile, success) => {
 export const LogoutAPIMethod = (success) => {
   return axios
     .post(
-      `/api/profile/logout`,
+      `https://datafetcherforbinomo.azurewebsites.net/api/profile/logout`,
       {},
       {
         withCredentials: true,
@@ -54,7 +54,7 @@ export const LogoutAPIMethod = (success) => {
     .then(success);
 };
 export const CheckOnlineAPIMethod = (profile, success) => {
-  return fetch(`/api/profile/checkonline`, {
+  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/profile/checkonline`, {
     ...defaultHeaders,
     method: "GET",
     credentials: "include",
