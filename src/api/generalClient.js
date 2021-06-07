@@ -54,11 +54,16 @@ export const LogoutAPIMethod = (success) => {
     .then(success);
 };
 export const CheckOnlineAPIMethod = (profile, success) => {
-  return fetch(`https://316project.azurewebsites.net/api/profile/checkonline`, {
-    ...defaultHeaders,
-    method: "GET",
-    credentials: "include",
-  })
+  return axios
+    .get(
+      `https://316project.azurewebsites.net/api/profile/checkonline`,
+      {
+        ...defaultHeaders,
+        method: "GET",
+        credentials: "include",
+        withCredentials: true,
+      }
+    )
     .then(checkStatus)
     .then(parseJSON)
     .then(success);
