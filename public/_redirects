@@ -1,1 +1,2 @@
-/api/* https://316project.azurewebsites.net/api/:splat200
+/api/* https://316project.azurewebsites.net/api/:splat 200
+/* /index.html 200
