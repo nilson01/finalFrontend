@@ -4,6 +4,7 @@ const defaultHeaders = {
     "Content-Type": "application/json; charset=UTF-8",
   },
 };
+
 export const adminLoginAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/admin/login", data, {

@@ -58,12 +58,10 @@ export const CheckOnlineAPIMethod = (profile, success) => {
   return axios
     .get(
       `https://316project.azurewebsites.net/api/profile/checkonline`,
-      {
-        withCredentials: true,
-      }
+      {},
+      { withCredentials: true, }
     )
     .then(checkStatus)
-    .then(parseJSON)
     .then(success);
 };
 
