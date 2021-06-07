@@ -53,14 +53,12 @@ export const LogoutAPIMethod = (success) => {
     .then(checkStatus)
     .then(success);
 };
+
 export const CheckOnlineAPIMethod = (profile, success) => {
   return axios
     .get(
       `https://316project.azurewebsites.net/api/profile/checkonline`,
       {
-        ...defaultHeaders,
-        method: "GET",
-        credentials: "include",
         withCredentials: true,
       }
     )
@@ -68,6 +66,7 @@ export const CheckOnlineAPIMethod = (profile, success) => {
     .then(parseJSON)
     .then(success);
 };
+
 
 async function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {

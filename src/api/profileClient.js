@@ -4,13 +4,13 @@ const defaultHeaders = {
     "Content-Type": "application/json; charset=UTF-8",
   },
 };
+
 export const GetProfileDataAPIMethod = (success) => {
-  return fetch(`https://316project.azurewebsites.net/api/profile/checkOnline`, {
-    ...defaultHeaders,
-    method: "GET",
-  })
+  return axios
+    .get("https://316project.azurewebsites.net/api/profile/checkOnline", {
+      withCredentials: true,
+    })
     .then(checkStatus)
-    .then(parseJSON)
     .then(success);
 };
 
