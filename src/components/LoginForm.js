@@ -45,10 +45,10 @@ export default function LoginForm(props) {
 
   const sendLoginInfo = async (e) => {
     try {
-      await LoginAPIMethod({ email: email, password: pass }, async (res) => {
+      await LoginAPIMethod({ email: email, password: pass }, (res) => {
         localStorage.setItem("balance", res.data.data.balance);
         props.setPass(pass);
-        await getprofileurlAPIMethod((res) => {
+        getprofileurlAPIMethod((res) => {
           // console.log(res.data.data);
           localStorage.setItem("accountType", res.data.data.accountType);
           localStorage.setItem("name", res.data.data.name);
