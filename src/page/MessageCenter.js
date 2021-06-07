@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/SideBar";
 import UserHeader from "../components/userHeader";
 
@@ -32,8 +32,11 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContactUserVAdmin({socket}) {
+export default function ContactUserVAdmin({ socket }) {
   const classes = styles();
+  useEffect(() => {
+    document.title = `Notification`;
+  }, []);
   return (
     <Grid container alignItems="center" className={classes.root}>
       <Sidebar />
@@ -41,9 +44,9 @@ export default function ContactUserVAdmin({socket}) {
         <Paper className={classes.rightContainer}>
           <UserHeader page=" Notifications" />
           {JSON.parse(localStorage.getItem("isAdmin")) ? (
-            <AdminMessageCenter socket={socket}/>
+            <AdminMessageCenter socket={socket} />
           ) : (
-            <UserMessageCenter socket={socket}/>
+            <UserMessageCenter socket={socket} />
           )}
         </Paper>
       </Grid>

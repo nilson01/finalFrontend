@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { ContactUsInfoAPIMethod } from "../api/generalClient";
 import {
   Grid,
@@ -51,6 +51,11 @@ const StyledButton = withStyles((theme) => ({
 }))(Button);
 
 const Contact = (props) => {
+
+  useEffect(() => {
+    document.title = `Contact us`;
+  }, []);
+
   const classes = styles();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -117,9 +122,6 @@ const Contact = (props) => {
     setOpen(false);
   };
 
-
-
-
   const onClick_send = (e) => {
     setSnackbarMessage("Message Sent!");
     setStatus("success");
@@ -127,7 +129,7 @@ const Contact = (props) => {
   };
   return (
     <>
-     
+
       <Container className={classes.bodyContainer}>
         <Grid
           container

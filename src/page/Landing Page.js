@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -53,9 +53,12 @@ const StyledButton = withStyles((theme) => ({
 
 const Landing = () => {
   const classes = styles();
+  useEffect(() => {
+    document.title = `Tradegy`;
+  }, []);
   return (
     <>
-     
+
       <Box
         display="flex"
         style={{

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, makeStyles, Grid, Typography } from "@material-ui/core";
 
 const styles = makeStyles((theme) => ({
@@ -24,9 +24,12 @@ const styles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = styles();
+  useEffect(() => {
+    document.title = `About us`;
+  }, []);
   return (
     <>
-   
+
       <Box
         display="flex"
         style={{

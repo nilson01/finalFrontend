@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/SideBar";
 import UserHeader from "../components/userHeader";
 
@@ -36,6 +36,11 @@ export default function ContactUserVAdmin({ socket }) {
   const localUser = JSON.parse(localStorage.getItem("isAdmin"));
   const [isAdmin] = useState(localUser);
   const classes = styles();
+
+  useEffect(() => {
+    document.title = `Contact center`;
+  }, []);
+
   return (
     <Grid container alignItems="center" className={classes.root}>
       <Sidebar />

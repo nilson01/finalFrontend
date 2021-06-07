@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@material-ui/core";
 
 function PageNotFound() {
+  useEffect(() => {
+    document.title = `404`;
+  }, []);
   return (
     <>
 

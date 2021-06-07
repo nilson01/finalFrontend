@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../components/SideBar";
 import { Grid, Paper, makeStyles, Container } from "@material-ui/core";
 import UserHeader from "../components/userHeader";
@@ -30,6 +30,10 @@ const styles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = styles();
+
+  useEffect(() => {
+    document.title = `Admin settings`;
+  }, []);
   return (
     <div>
       <Grid container alignItems="center" className={classes.root}>

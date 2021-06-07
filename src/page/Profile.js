@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/SideBar";
 import { Grid, Paper, makeStyles, Container } from "@material-ui/core";
 import UserHeader from "../components/userHeader";
@@ -31,7 +31,9 @@ const styles = makeStyles((theme) => ({
 export default function Profile() {
   const classes = styles();
   const [picture, setPicture] = useState(localStorage.getItem("profile_url"));
-
+  useEffect(() => {
+    document.title = `Profile`;
+  }, []);
   return (
     <div>
       <Grid container alignItems="center" className={classes.root}>

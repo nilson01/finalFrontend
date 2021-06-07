@@ -43,7 +43,7 @@ const Live = () => {
       temp = temp.data.data;
       var temp2 = [];
       var resMax,
-        resMin = 0;
+          resMin = 0;
       // console.log(temp);
       temp.forEach((el) => {
         var result = [el.open, el.high, el.low, el.close];
@@ -162,43 +162,43 @@ const Live = () => {
   });*/
 
   return (
-    <>
+      <>
 
-      <Paper elevation={0} className={classes.bodyContainer}>
-        <Grid
-          container
-          justify="flex-start"
-          alignItems="center"
-          direction="row"
-          className={classes.leftContainer}
-        >
-          <Grid item>
-            <Box display="flex">
-              <Typography className={classes.predictor} color="secondary">
-                Live Trades
-              </Typography>
-            </Box>
-          </Grid>
+        <Paper elevation={0} className={classes.bodyContainer}>
           <Grid
-            item
-            style={{
-              width: "100%",
-              height: "88.5%",
-            }}
-            className={classes.secondary}
-            id="chart"
+              container
+              justify="flex-start"
+              alignItems="center"
+              direction="row"
+              className={classes.leftContainer}
           >
-            <Chart
-              options={state.options}
-              series={state.series}
-              type="candlestick"
-              width="100%"
-              height="100%"
-            />
+            <Grid item>
+              <Box display="flex">
+                <Typography className={classes.predictor} color="secondary">
+                  Live Trades
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid
+                item
+                style={{
+                  width: "100%",
+                  height: "88.5%",
+                }}
+                className={classes.secondary}
+                id="chart"
+            >
+              <Chart
+                  options={state.options}
+                  series={state.series}
+                  type="candlestick"
+                  width="100%"
+                  height="100%"
+              />
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-    </>
+        </Paper>
+      </>
   );
 };
 

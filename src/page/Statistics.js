@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/SideBar";
 import UserHeader from "../components/userHeader";
 import Masonry from "react-masonry-css";
@@ -35,6 +35,10 @@ export default function ContactUserVAdmin() {
     1100: 2,
     700: 1,
   };
+
+  useEffect(() => {
+    document.title = `Statistics`;
+  }, []);
 
   return (
     <Grid container alignItems="center" className={classes.root}>

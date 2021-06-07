@@ -65,7 +65,7 @@ export default function Dashboard(props) {
   }
 
   useEffect(() => {
-
+    document.title = `Dashboard`;
     async function fetchData() {
       try {
         await getBinomoDealsAPIMethod(10, (res) => {
