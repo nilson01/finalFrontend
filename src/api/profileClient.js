@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const GetProfileDataAPIMethod = (success) => {
   return axios
-    .get("https://316project.azurewebsites.net/api/profile/checkOnline", {
+    .get("/api/profile/checkOnline", {
       headers: {
         withCredentials: true,
       },
@@ -28,7 +28,7 @@ export const uploadImageToCloudinaryAPIMethod = (formData, success) => {
 
 export const getprofileurlAPIMethod = (success) => {
   return axios
-    .get("https://316project.azurewebsites.net/api/profile/profileHeader", {
+    .get("/api/profile/profileHeader", {
       headers: {
         withCredentials: true,
       },
@@ -39,7 +39,7 @@ export const getprofileurlAPIMethod = (success) => {
 
 export const getBinomoDealsAPIMethod = (amount, success) => {
   return axios
-    .get(`https://316project.azurewebsites.net/api/profile/fetchBinomoDeals/${amount}`, {
+    .get(`/api/profile/fetchBinomoDeals/${amount}`, {
       headers: {
         withCredentials: true,
       },
@@ -51,7 +51,7 @@ export const getBinomoDealsAPIMethod = (amount, success) => {
 
 export const changeProfileAPIMethod = (data, success) => {
   return axios
-    .post("https://316project.azurewebsites.net/api/profile/settings", data, {
+    .post("/api/profile/settings", data, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -63,7 +63,7 @@ export const changeProfileAPIMethod = (data, success) => {
 
 export const changePasswordAPIMethod = (data, success) => {
   return axios
-    .post("https://316project.azurewebsites.net/api/profile/changePassword", data, {
+    .post("/api/profile/changePassword", data, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -74,7 +74,7 @@ export const changePasswordAPIMethod = (data, success) => {
 };
 export const checkPasswordAPIMethod = (data, success) => {
   return axios
-    .post("https://316project.azurewebsites.net/api/profile/checkPassword", data, {
+    .post("/api/profile/checkPassword", data, {
       headers: {
         withCredentials: true,
         credentials: 'include',

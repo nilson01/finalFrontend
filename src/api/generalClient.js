@@ -6,7 +6,7 @@ const defaultHeaders = {
 };
 
 export const ContactUsInfoAPIMethod = (userInfo, success) => {
-  return fetch(`https://316project.azurewebsites.net/api/admin/ContactUs`, {
+  return fetch(`/api/admin/ContactUs`, {
     ...defaultHeaders,
     method: "POST",
     body: JSON.stringify(userInfo),
@@ -17,7 +17,7 @@ export const ContactUsInfoAPIMethod = (userInfo, success) => {
 
 export const getAllNotificationsAPIMethod = (success) => {
   return axios
-    .get("https://316project.azurewebsites.net/api/profile/notifications", {
+    .get("/api/profile/notifications", {
       headers: {
         withCredentials: true,
       },
@@ -28,7 +28,7 @@ export const getAllNotificationsAPIMethod = (success) => {
 
 export const signUpAPIInfo = (profile, success) => {
   return axios
-    .post(`https://316project.azurewebsites.net/api/profile/register`, profile, {
+    .post(`/api/profile/register`, profile, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -40,7 +40,7 @@ export const signUpAPIInfo = (profile, success) => {
 
 export const LoginAPIMethod = (profile, success) => {
   return axios
-    .post(`https://316project.azurewebsites.net/api/profile/login`, profile, {
+    .post(`/api/profile/login`, profile, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -52,7 +52,7 @@ export const LoginAPIMethod = (profile, success) => {
 export const LogoutAPIMethod = (success) => {
   return axios
     .post(
-      `https://316project.azurewebsites.net/api/profile/logout`, {}, {
+      `/api/profile/logout`, {}, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -66,7 +66,7 @@ export const LogoutAPIMethod = (success) => {
 export const CheckOnlineAPIMethod = (profile, success) => {
   return axios
     .get(
-      `https://316project.azurewebsites.net/api/profile/checkonline`, {
+      `/api/profile/checkonline`, {
       headers: {
         withCredentials: true,
       },

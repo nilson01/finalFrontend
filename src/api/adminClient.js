@@ -7,7 +7,7 @@ const defaultHeaders = {
 
 export const adminLoginAPIMethod = (data, success) => {
   return axios
-    .post("https://316project.azurewebsites.net/api/admin/login", data, {
+    .post("/api/admin/login", data, {
       headers: {
         withCredentials: true,
         credentials: 'include',
@@ -19,7 +19,7 @@ export const adminLoginAPIMethod = (data, success) => {
 
 export const deleteUserAPIMethod = (data, success) => {
   return axios
-    .delete(`https://316project.azurewebsites.net/api/admin/usersInfo/${data.id}`, {
+    .delete(`/api/admin/usersInfo/${data.id}`, {
       headers: {
         withCredentials: true,
       },
@@ -30,7 +30,7 @@ export const deleteUserAPIMethod = (data, success) => {
 
 export const getAllUsersAPIMethod = (success) => {
   return axios
-    .get("https://316project.azurewebsites.net/api/admin/usersInfo", {
+    .get("/api/admin/usersInfo", {
       headers: {
         withCredentials: true,
       },
@@ -43,7 +43,7 @@ export const getAllUsersAPIMethod = (success) => {
 
 export const getAllMessagesAPIMethod = (success) => {
   return axios
-    .get("https://316project.azurewebsites.net/api/admin/ContactUs", {
+    .get("/api/admin/ContactUs", {
       headers: {
         withCredentials: true,
       },
@@ -54,7 +54,7 @@ export const getAllMessagesAPIMethod = (success) => {
 
 
 export const NotifyAPIMethod = (userInfo, success) => {
-  return fetch(`https://316project.azurewebsites.net/api/admin/notify`, {
+  return fetch(`/api/admin/notify`, {
     ...defaultHeaders,
     method: "POST",
     body: JSON.stringify(userInfo),
