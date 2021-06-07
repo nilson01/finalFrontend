@@ -94,6 +94,7 @@ export default function ProfileElement(props) {
       const currPassword = await checkPasswordAPIMethod({
         password: oldPassword,
       });
+      console.log(currPassword.data.result);
       if (!currPassword.data.result) {
         setSuccess("warning");
         setOpen(true);
