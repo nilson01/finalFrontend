@@ -1,9 +1,4 @@
 import axios from "axios";
-const defaultHeaders = {
-  headers: {
-    "Content-Type": "application/json; charset=UTF-8",
-  },
-};
 
 export const GetProfileDataAPIMethod = (success) => {
   return axios
