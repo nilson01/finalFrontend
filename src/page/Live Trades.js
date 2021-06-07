@@ -39,7 +39,7 @@ const Live = () => {
 
   useEffect(() => {
     var a = setInterval(async () => {
-      var temp = await axios.get("https://datafetcherforbinomo.azurewebsites.net/api/candles/");
+      var temp = await axios.get("https://316project.azurewebsites.net/api/candles/");
       temp = temp.data.data;
       var temp2 = [];
       var resMax,

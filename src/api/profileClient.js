@@ -5,7 +5,7 @@ const defaultHeaders = {
   },
 };
 export const GetProfileDataAPIMethod = (success) => {
-  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/profile/checkOnline`, {
+  return fetch(`https://316project.azurewebsites.net/api/profile/checkOnline`, {
     ...defaultHeaders,
     method: "GET",
   })
@@ -31,7 +31,7 @@ export const uploadImageToCloudinaryAPIMethod = (formData, success) => {
 
 export const getprofileurlAPIMethod = (success) => {
   return axios
-    .get("https://datafetcherforbinomo.azurewebsites.net/api/profile/profileHeader", {
+    .get("https://316project.azurewebsites.net/api/profile/profileHeader", {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -40,7 +40,7 @@ export const getprofileurlAPIMethod = (success) => {
 
 export const getBinomoDealsAPIMethod = (amount, success) => {
   return axios
-    .get(`https://datafetcherforbinomo.azurewebsites.net/api/profile/fetchBinomoDeals/${amount}`, {
+    .get(`https://316project.azurewebsites.net/api/profile/fetchBinomoDeals/${amount}`, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -50,7 +50,7 @@ export const getBinomoDealsAPIMethod = (amount, success) => {
 
 export const changeProfileAPIMethod = (data, success) => {
   return axios
-    .post("https://datafetcherforbinomo.azurewebsites.net/api/profile/settings", data, {
+    .post("https://316project.azurewebsites.net/api/profile/settings", data, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -59,7 +59,7 @@ export const changeProfileAPIMethod = (data, success) => {
 
 export const changePasswordAPIMethod = (data, success) => {
   return axios
-    .post("https://datafetcherforbinomo.azurewebsites.net/api/profile/changePassword", data, {
+    .post("https://316project.azurewebsites.net/api/profile/changePassword", data, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -67,7 +67,7 @@ export const changePasswordAPIMethod = (data, success) => {
 };
 export const checkPasswordAPIMethod = (data, success) => {
   return axios
-    .post("https://datafetcherforbinomo.azurewebsites.net/api/profile/checkPassword", data, {
+    .post("https://316project.azurewebsites.net/api/profile/checkPassword", data, {
       withCredentials: true,
     })
     .then(checkStatus)

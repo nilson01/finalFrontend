@@ -6,7 +6,7 @@ const defaultHeaders = {
 };
 
 export const ContactUsInfoAPIMethod = (userInfo, success) => {
-  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/admin/ContactUs`, {
+  return fetch(`https://316project.azurewebsites.net/api/admin/ContactUs`, {
     ...defaultHeaders,
     method: "POST",
     body: JSON.stringify(userInfo),
@@ -17,7 +17,7 @@ export const ContactUsInfoAPIMethod = (userInfo, success) => {
 
 export const getAllNotificationsAPIMethod = (success) => {
   return axios
-    .get("https://datafetcherforbinomo.azurewebsites.net/api/profile/notifications", {
+    .get("https://316project.azurewebsites.net/api/profile/notifications", {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -26,7 +26,7 @@ export const getAllNotificationsAPIMethod = (success) => {
 
 export const signUpAPIInfo = (profile, success) => {
   return axios
-    .post(`https://datafetcherforbinomo.azurewebsites.net/api/profile/register`, profile, {
+    .post(`https://316project.azurewebsites.net/api/profile/register`, profile, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -35,7 +35,7 @@ export const signUpAPIInfo = (profile, success) => {
 
 export const LoginAPIMethod = (profile, success) => {
   return axios
-    .post(`https://datafetcherforbinomo.azurewebsites.net/api/profile/login`, profile, {
+    .post(`https://316project.azurewebsites.net/api/profile/login`, profile, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -44,7 +44,7 @@ export const LoginAPIMethod = (profile, success) => {
 export const LogoutAPIMethod = (success) => {
   return axios
     .post(
-      `https://datafetcherforbinomo.azurewebsites.net/api/profile/logout`,
+      `https://316project.azurewebsites.net/api/profile/logout`,
       {},
       {
         withCredentials: true,
@@ -54,7 +54,7 @@ export const LogoutAPIMethod = (success) => {
     .then(success);
 };
 export const CheckOnlineAPIMethod = (profile, success) => {
-  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/profile/checkonline`, {
+  return fetch(`https://316project.azurewebsites.net/api/profile/checkonline`, {
     ...defaultHeaders,
     method: "GET",
     credentials: "include",

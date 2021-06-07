@@ -6,7 +6,7 @@ const defaultHeaders = {
 };
 export const adminLoginAPIMethod = (data, success) => {
   return axios
-    .post("https://datafetcherforbinomo.azurewebsites.net/api/admin/login", data, {
+    .post("https://316project.azurewebsites.net/api/admin/login", data, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -15,7 +15,7 @@ export const adminLoginAPIMethod = (data, success) => {
 
 export const deleteUserAPIMethod = (data, success) => {
   return axios
-    .delete(`https://datafetcherforbinomo.azurewebsites.net/api/admin/usersInfo/${data.id}`, {
+    .delete(`https://316project.azurewebsites.net/api/admin/usersInfo/${data.id}`, {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -24,7 +24,7 @@ export const deleteUserAPIMethod = (data, success) => {
 
 export const getAllUsersAPIMethod = (success) => {
   return axios
-    .get("https://datafetcherforbinomo.azurewebsites.net/api/admin/usersInfo", {
+    .get("https://316project.azurewebsites.net/api/admin/usersInfo", {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -35,7 +35,7 @@ export const getAllUsersAPIMethod = (success) => {
 
 export const getAllMessagesAPIMethod = (success) => {
   return axios
-    .get("https://datafetcherforbinomo.azurewebsites.net/api/admin/ContactUs", {
+    .get("https://316project.azurewebsites.net/api/admin/ContactUs", {
       withCredentials: true,
     })
     .then(checkStatus)
@@ -44,7 +44,7 @@ export const getAllMessagesAPIMethod = (success) => {
 
 
 export const NotifyAPIMethod = (userInfo, success) => {
-  return fetch(`https://datafetcherforbinomo.azurewebsites.net/api/admin/notify`, {
+  return fetch(`https://316project.azurewebsites.net/api/admin/notify`, {
     ...defaultHeaders,
     method: "POST",
     body: JSON.stringify(userInfo),
