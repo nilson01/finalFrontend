@@ -28,6 +28,7 @@ export const signUpAPIInfo = (profile, success) => {
   return axios
     .post(`https://316project.azurewebsites.net/api/profile/register`, profile, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
     .then(success);
@@ -37,6 +38,7 @@ export const LoginAPIMethod = (profile, success) => {
   return axios
     .post(`https://316project.azurewebsites.net/api/profile/login`, profile, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
     .then(success);
@@ -48,6 +50,7 @@ export const LogoutAPIMethod = (success) => {
       {},
       {
         withCredentials: true,
+        credentials: 'include',
       }
     )
     .then(checkStatus)
@@ -58,7 +61,6 @@ export const CheckOnlineAPIMethod = (profile, success) => {
   return axios
     .get(
       `https://316project.azurewebsites.net/api/profile/checkonline`,
-      {},
       { withCredentials: true, }
     )
     .then(checkStatus)

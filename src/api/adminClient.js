@@ -9,6 +9,7 @@ export const adminLoginAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/admin/login", data, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
     .then(success);

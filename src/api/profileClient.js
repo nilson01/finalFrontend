@@ -47,6 +47,7 @@ export const changeProfileAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/settings", data, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
     .then(success);
@@ -56,6 +57,7 @@ export const changePasswordAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/changePassword", data, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
     .then(success);
@@ -64,6 +66,7 @@ export const checkPasswordAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/checkPassword", data, {
       withCredentials: true,
+      credentials: 'include',
     })
     .then(checkStatus)
 
