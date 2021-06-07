@@ -18,7 +18,9 @@ export const ContactUsInfoAPIMethod = (userInfo, success) => {
 export const getAllNotificationsAPIMethod = (success) => {
   return axios
     .get("https://316project.azurewebsites.net/api/profile/notifications", {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -27,8 +29,10 @@ export const getAllNotificationsAPIMethod = (success) => {
 export const signUpAPIInfo = (profile, success) => {
   return axios
     .post(`https://316project.azurewebsites.net/api/profile/register`, profile, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -37,8 +41,10 @@ export const signUpAPIInfo = (profile, success) => {
 export const LoginAPIMethod = (profile, success) => {
   return axios
     .post(`https://316project.azurewebsites.net/api/profile/login`, profile, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -46,12 +52,12 @@ export const LoginAPIMethod = (profile, success) => {
 export const LogoutAPIMethod = (success) => {
   return axios
     .post(
-      `https://316project.azurewebsites.net/api/profile/logout`,
-      {},
-      {
+      `https://316project.azurewebsites.net/api/profile/logout`, {}, {
+      headers: {
         withCredentials: true,
         credentials: 'include',
-      }
+      },
+    }
     )
     .then(checkStatus)
     .then(success);
@@ -60,8 +66,11 @@ export const LogoutAPIMethod = (success) => {
 export const CheckOnlineAPIMethod = (profile, success) => {
   return axios
     .get(
-      `https://316project.azurewebsites.net/api/profile/checkonline`,
-      { withCredentials: true, }
+      `https://316project.azurewebsites.net/api/profile/checkonline`, {
+      headers: {
+        withCredentials: true,
+      },
+    }
     )
     .then(checkStatus)
     .then(success);

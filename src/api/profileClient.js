@@ -3,7 +3,9 @@ import axios from "axios";
 export const GetProfileDataAPIMethod = (success) => {
   return axios
     .get("https://316project.azurewebsites.net/api/profile/checkOnline", {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -27,7 +29,9 @@ export const uploadImageToCloudinaryAPIMethod = (formData, success) => {
 export const getprofileurlAPIMethod = (success) => {
   return axios
     .get("https://316project.azurewebsites.net/api/profile/profileHeader", {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -36,7 +40,9 @@ export const getprofileurlAPIMethod = (success) => {
 export const getBinomoDealsAPIMethod = (amount, success) => {
   return axios
     .get(`https://316project.azurewebsites.net/api/profile/fetchBinomoDeals/${amount}`, {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -46,8 +52,10 @@ export const getBinomoDealsAPIMethod = (amount, success) => {
 export const changeProfileAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/settings", data, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -56,8 +64,10 @@ export const changeProfileAPIMethod = (data, success) => {
 export const changePasswordAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/changePassword", data, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -65,8 +75,10 @@ export const changePasswordAPIMethod = (data, success) => {
 export const checkPasswordAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/profile/checkPassword", data, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
 

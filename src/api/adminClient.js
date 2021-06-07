@@ -8,8 +8,10 @@ const defaultHeaders = {
 export const adminLoginAPIMethod = (data, success) => {
   return axios
     .post("https://316project.azurewebsites.net/api/admin/login", data, {
-      withCredentials: true,
-      credentials: 'include',
+      headers: {
+        withCredentials: true,
+        credentials: 'include',
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -18,7 +20,9 @@ export const adminLoginAPIMethod = (data, success) => {
 export const deleteUserAPIMethod = (data, success) => {
   return axios
     .delete(`https://316project.azurewebsites.net/api/admin/usersInfo/${data.id}`, {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -27,7 +31,9 @@ export const deleteUserAPIMethod = (data, success) => {
 export const getAllUsersAPIMethod = (success) => {
   return axios
     .get("https://316project.azurewebsites.net/api/admin/usersInfo", {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
@@ -38,7 +44,9 @@ export const getAllUsersAPIMethod = (success) => {
 export const getAllMessagesAPIMethod = (success) => {
   return axios
     .get("https://316project.azurewebsites.net/api/admin/ContactUs", {
-      withCredentials: true,
+      headers: {
+        withCredentials: true,
+      },
     })
     .then(checkStatus)
     .then(success);
