@@ -67,7 +67,7 @@ export default function ProfileElement(props) {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  
+
 
   var pictureRef = useRef(null);
   const handleEmail = (e) => {
@@ -109,6 +109,7 @@ export default function ProfileElement(props) {
       if (newPassword)
         changePasswordAPIMethod({
           password: newPassword,
+          oldPassword: oldPassword,
         });
       setSuccess("success");
       setOpen(true);
@@ -122,7 +123,7 @@ export default function ProfileElement(props) {
 
   };
   // Profile picture change handler
-  const handlePhotoChange = async(e) => {
+  const handlePhotoChange = async (e) => {
     try {
       const selectedFile = e.target.files[0];
       const t = selectedFile.type.split("/").pop().toLowerCase();
